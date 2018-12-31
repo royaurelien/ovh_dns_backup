@@ -66,7 +66,7 @@ def _check_config_file():
 def _get_api(**args):
 	return ovh.Client(**dict((k,v) for k,v in args.items() if v and k in OVH_VARS))
 
-def _create_backup_path(path=EXPORT_PATH):
+def _create_backup_path(path):
 	backup_path = os.path.join(path, __gen_name())
 	
 	# check / create backup directory
@@ -87,7 +87,6 @@ def __backup(api, dest):
 	return count
 
 def backup(**kwargs):
-	
 	if not _check_args(kwargs) and not _check_config_file():
 		raise ValueError('Please provide correct configuration')
 
@@ -100,8 +99,8 @@ def backup(**kwargs):
 def main():
 	parser = _get_parser()
 	args = vars(parser.parse_args())
-
 	res = backup(**args)
+
 	sys.exit(0)
 
 # def main():

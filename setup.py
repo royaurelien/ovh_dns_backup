@@ -81,7 +81,7 @@ setup(
     # La syntaxe est "nom-de-commande-a-creer = package.module:fonction".
     entry_points = {
         'console_scripts': [
-            'ovh-dns-backup = ovh_dns_backup.core:backup',
+            'ovh-dns-backup = ovh_dns_backup.core:main',
         ],
     },
  
