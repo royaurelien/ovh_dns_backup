@@ -1,0 +1,7 @@
+ovh.conf
+*.pyc
+temp/
+*.egg-info/
+__pycache__/
+build/
+dist/
